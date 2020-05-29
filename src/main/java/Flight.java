@@ -22,14 +22,16 @@ public class Flight {
     }
 
     public void addPassenger(Passenger passenger) {
+     if(this.checkAvailableSeat()){
         this.passengers.add(passenger);
-    }
+    }}
 
-    public void removePassenger() {
+    public void removePassenger(){
         this.passengers.remove(0);
     }
 
     public boolean checkAvailableSeat() {
         return (this.plane.getPlaneType().getCapacity() > this.countPassenger());
     }
+
 }
