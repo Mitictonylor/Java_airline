@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class FlightTest {
 
@@ -36,6 +37,10 @@ public class FlightTest {
         flight.addPassenger(passenger2);
         flight.removePassenger();
         assertEquals(1, flight.countPassenger());
+    }
 
+    @Test
+    public void checkIfThereIsAvailableSeat(){
+      assertTrue(flight.checkAvailableSeat());
     }
 }
