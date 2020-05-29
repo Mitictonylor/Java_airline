@@ -32,6 +32,8 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
      if( !this.checkIfPassengerIsAlreadyInThePassengerList(passenger) && this.checkAvailableSeat() ){
         this.passengers.add(passenger);
+        Flight flightToAddToPassenger = new Flight(this.plane, this.flightNumber, this.destinationAirport, this.departureAirport,this.departureTime);
+        passenger.setFlight(flightToAddToPassenger);
     }}
 
     public void removePassenger(){

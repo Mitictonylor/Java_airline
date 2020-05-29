@@ -19,7 +19,7 @@ public class FlightTest {
         passenger3 = new Passenger("Eustachio", 1);
         passenger4 = new Passenger("Ciccillo", 5);
         plane = new Plane(PlaneType.BOEING);
-        flight = new Flight(plane,"a1010","BRI","GLA","18:00");
+        flight = new Flight(plane,"a1010","BRI","GLA", "18-00-00");
     }
     @Test
     public void theFlightStartWithNoPassenger(){
