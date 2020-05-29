@@ -17,4 +17,7 @@ public class Flight {
         this.passengers = new ArrayList<Passenger>();
     }
 
+    public int countPassenger() {
+        return this.passengers.size();
+    }
 }

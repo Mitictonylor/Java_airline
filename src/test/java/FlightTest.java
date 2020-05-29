@@ -1,4 +1,7 @@
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class FlightTest {
 
@@ -17,6 +20,10 @@ public class FlightTest {
         passenger4 = new Passenger("Ciccillo", 5);
         plane = new Plane(PlaneType.BOEING);
         flight = new Flight(plane,"a1010","BRI","GLA","18:00");
+    }
+    @Test
+    public void theFlightStartWithNoPassenger(){
+        assertEquals(0, flight.countPassenger());
     }
 
 
