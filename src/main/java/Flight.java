@@ -24,4 +24,8 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
         this.passengers.add(passenger);
     }
+
+    public void removePassenger() {
+        this.passengers.remove(0);
+    }
 }

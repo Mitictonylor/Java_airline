@@ -30,7 +30,12 @@ public class FlightTest {
         flight.addPassenger(passenger1);
         assertEquals(1, flight.countPassenger());
     }
+    @Test
+    public void weCanRemoveAPassenger(){
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.removePassenger();
+        assertEquals(1, flight.countPassenger());
 
-
-
+    }
 }
