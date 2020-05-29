@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class FlightManagerTest {
 
@@ -17,8 +18,8 @@ public class FlightManagerTest {
     public void setUp() {
         passenger1 = new Passenger("Giovanni", 2);
         passenger2 = new Passenger("PierGiorgio", 1);
-        passenger3 = new Passenger("Eustachio", 3);
-        passenger4 = new Passenger("Ciccillo", 5);
+        passenger3 = new Passenger("Paul", 3);
+        passenger4 = new Passenger("Francis", 5);
         plane = new Plane(PlaneType.CONCORDE);
         flight = new Flight(plane,"a1010","BRI","GLA","18:00");
         flightManager = new FlightManager(flight);
@@ -39,7 +40,10 @@ public class FlightManagerTest {
     @Test
     public void getTotalBaggageWeightParFlight() {
     assertEquals(45.00, flightManager.totalBaggageWeighParFlight(), 0.01);
+    }
 
-
+    @Test
+    public void getLeftBaggageWeighParFlight() {
+        assertEquals(1455.00, flightManager.leftOverWeightForBaggages(), 0.01);
     }
 }

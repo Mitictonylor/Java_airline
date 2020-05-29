@@ -23,4 +23,9 @@ public class FlightManager {
         }
         return total;
     }
+
+    public double leftOverWeightForBaggages() {
+        double difference = this.availableBaggageWeightForPlane() - this.totalBaggageWeighParFlight();
+        return difference;
+    }
 }
