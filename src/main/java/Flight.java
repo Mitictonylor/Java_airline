@@ -21,6 +21,14 @@ public class Flight {
         return this.passengers.size();
     }
 
+    public ArrayList<Passenger> getPassengers() {
+        return this.passengers;
+    }
+
+    public Plane getPlane() {
+        return this.plane;
+    }
+
     public void addPassenger(Passenger passenger) {
      if( !this.checkIfPassengerIsAlreadyInThePassengerList(passenger) && this.checkAvailableSeat() ){
         this.passengers.add(passenger);
