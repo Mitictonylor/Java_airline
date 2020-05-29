@@ -26,10 +26,14 @@ public class FlightManagerTest {
         flight.addPassenger(passenger2);
         flight.addPassenger(passenger3);
     }
+    @Test
+    public void getAllowedBaggageWeightParPlane() {
+        assertEquals(1500.00, flightManager.availableBaggageWeightForPlane(),0.01);
+    }
 
     @Test
     public void getAllowedBaggageWeightParPassenger() {
-        assertEquals(7.5, flightManager.baggageAllowedParFlight(),0.01);
+        assertEquals(7.5, flightManager.oneBaggageWeight(),0.01);
     }
 
     @Test
