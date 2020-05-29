@@ -13,8 +13,8 @@ public class FlightManager {
     }
 
     public double totalBaggageWeighParFlight() {
-        double total = 0.0;
-        for( Passenger passenger : flight.getPassengers()){
+        double total = 0.00;
+        for( Passenger passenger : this.flight.getPassengers()){
             total += (passenger.getBags()*this.baggageAllowedParFlight());
         }
         return total;
