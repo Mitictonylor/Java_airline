@@ -22,7 +22,7 @@ public class Flight {
     }
 
     public void addPassenger(Passenger passenger) {
-     if(this.checkAvailableSeat()){
+     if( !this.checkIfPassengerIsAlreadyInThePassengerList(passenger) && this.checkAvailableSeat() ){
         this.passengers.add(passenger);
     }}
 
@@ -34,4 +34,7 @@ public class Flight {
         return (this.plane.getPlaneType().getCapacity() > this.countPassenger());
     }
 
+    public boolean checkIfPassengerIsAlreadyInThePassengerList(Passenger passenger) {
+        return this.passengers.indexOf(passenger) >= 0;
+    }
 }

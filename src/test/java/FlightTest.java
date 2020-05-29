@@ -47,7 +47,17 @@ public class FlightTest {
         Plane plane2 = new Plane(PlaneType.SMALLJET);
         Flight flight2 = new Flight(plane2,"a1010","BRI","GLA","18:00");
         flight2.addPassenger(passenger1);
-        flight2.addPassenger(passenger2);
         assertFalse(flight2.checkAvailableSeat());
+    }
+
+    @Test
+    public void checkIfPassengerIsAlreadyBooked_HeIsBooked() {
+        flight.addPassenger(passenger1);
+        assertTrue(flight.checkIfPassengerIsAlreadyInThePassengerList(passenger1));
+    }
+    @Test
+    public void checkIfPassengerIsAlreadyBooked_HeIsNotBooked() {
+        flight.addPassenger(passenger1);
+        assertFalse(flight.checkIfPassengerIsAlreadyInThePassengerList(passenger2));
     }
 }
