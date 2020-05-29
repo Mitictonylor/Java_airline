@@ -17,4 +17,6 @@ public class Passenger {
     public int getBags() {
         return this.numberOfBags;
     }
+
+
 }
