@@ -11,6 +11,14 @@ public class Passenger {
         this.flight = flight;
     }
 
+    public void setSeatNumber(int seatNumber) {
+        this.seatNumber = seatNumber;
+    }
+
+    public int getSeatNumber() {
+        return seatNumber;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -25,5 +33,8 @@ public class Passenger {
 
     public boolean hasFlight() {
         return this.flight != null;
+    }
+    public boolean hasSeatNumber() {
+        return this.seatNumber >= 0;
     }
 }

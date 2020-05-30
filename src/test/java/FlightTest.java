@@ -30,6 +30,7 @@ public class FlightTest {
         flight.addPassenger(passenger1);
         assertEquals(1, flight.countPassenger());
         assertTrue(passenger1.hasFlight());
+        assertTrue(passenger1.hasSeatNumber());
     }
     @Test
     public void weCanRemoveAPassenger(){
@@ -60,5 +61,18 @@ public class FlightTest {
     public void checkIfPassengerIsAlreadyBooked_HeIsNotBooked() {
         flight.addPassenger(passenger1);
         assertFalse(flight.checkIfPassengerIsAlreadyInThePassengerList(passenger2));
+    }
+
+    @Test
+    public void checkIfSeatHasBeenTakenAlready___yes() {
+        flight.addPassenger(passenger1);
+        passenger1.setSeatNumber(25);
+        assertTrue(flight.isSeatNumberAlreadyOccupied(25));
+    }
+    @Test
+    public void checkIfSeatHasBeenTakenAlready___no() {
+        flight.addPassenger(passenger1);
+        passenger1.setSeatNumber(25);
+        assertFalse(flight.isSeatNumberAlreadyOccupied(35));
     }
 }

@@ -34,7 +34,11 @@ public class Flight {
         this.passengers.add(passenger);
         Flight flightToAddToPassenger = new Flight(this.plane, this.flightNumber, this.destinationAirport, this.departureAirport,this.departureTime);
         passenger.setFlight(flightToAddToPassenger);
-    }}
+        this.assignSeat(passenger);
+        }
+    }
+
+
 
     public void removePassenger(){
         this.passengers.remove(0);
@@ -47,4 +51,23 @@ public class Flight {
     public boolean checkIfPassengerIsAlreadyInThePassengerList(Passenger passenger) {
         return this.passengers.indexOf(passenger) >= 0;
     }
+    public int generateRandomSeatNumber(){
+        int randomSeat = (int) (this.getPlane().getPlaneType().getCapacity() * Math.random() );
+        return randomSeat;
+    }
+    public boolean isSeatNumberAlreadyOccupied(int randomNumber){
+        for(Passenger passenger : this.passengers){
+            return passenger.getSeatNumber() == randomNumber;
+        }
+        return false;
+    }
+    public void assignSeat(Passenger passenger) {
+        int randomSeat = this.generateRandomSeatNumber();
+        if (!this.isSeatNumberAlreadyOccupied(randomSeat)){
+            passenger.setSeatNumber(randomSeat);
+        }else{
+            this.assignSeat(passenger);
+        }
+    }
+
 }
