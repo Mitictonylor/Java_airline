@@ -35,6 +35,6 @@ public class Passenger {
         return this.flight != null;
     }
     public boolean hasSeatNumber() {
-        return this.seatNumber >= 0;
+        return this.seatNumber > 0;
     }
 }

@@ -49,6 +49,7 @@ public class FlightTest {
         Plane plane2 = new Plane(PlaneType.SMALLJET);
         Flight flight2 = new Flight(plane2,"a1010","BRI","GLA","18:00");
         flight2.addPassenger(passenger1);
+        flight2.addPassenger(passenger2);
         assertFalse(flight2.checkAvailableSeat());
     }
 

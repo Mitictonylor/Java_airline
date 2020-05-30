@@ -52,8 +52,12 @@ public class Flight {
         return this.passengers.indexOf(passenger) >= 0;
     }
     public int generateRandomSeatNumber(){
-        int randomSeat = (int) (this.getPlane().getPlaneType().getCapacity() * Math.random() );
+        if(this.getPlane().getPlaneType().getCapacity() == 1){
+            return 1;
+        }else{
+        int randomSeat = (int) (this.getPlane().getPlaneType().getCapacity() * Math.random());
         return randomSeat;
+    }
     }
     public boolean isSeatNumberAlreadyOccupied(int randomNumber){
         for(Passenger passenger : this.passengers){
@@ -63,7 +67,7 @@ public class Flight {
     }
     public int generateNotUsedSeat() {
         int randomSeat = this.generateRandomSeatNumber();
-        while (!this.isSeatNumberAlreadyOccupied(randomSeat)) {
+        while (this.isSeatNumberAlreadyOccupied(randomSeat) && randomSeat > 0) {
             randomSeat = this.generateRandomSeatNumber();}
             return randomSeat;
     }
