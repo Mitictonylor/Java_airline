@@ -28,4 +28,17 @@ public class FlightManager {
         double difference = this.availableBaggageWeightForPlane() - this.totalBaggageWeighParFlight();
         return difference;
     }
+    public void sortPassengerListBySeatNumber(){
+        int i,j = 0;
+        Passenger temp;
+        for (i=0; i<this.flight.countPassenger() - 1; i++){
+            for (j=0; j <this.flight.countPassenger() -1 - i; j++){
+                if(this.flight.getPassengerAtIndex(j).getSeatNumber() > flight.getPassengerAtIndex(j+1).getSeatNumber()){
+                    temp = this.flight.getPassengerAtIndex(j);
+                    this.flight.getPassengers().set(j, this.flight.getPassengerAtIndex(j+1));
+                    this.flight.getPassengers().set(j+1, temp);
+                }
+            }
+        }
+    }
 }

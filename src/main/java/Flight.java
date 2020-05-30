@@ -70,4 +70,8 @@ public class Flight {
         }
     }
 
+    public Passenger getPassengerAtIndex(int index) {
+        return this.passengers.get(index);
+    }
+
 }
