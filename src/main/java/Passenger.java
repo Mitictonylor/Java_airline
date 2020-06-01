@@ -14,7 +14,6 @@ public class Passenger {
     public void setSeatNumber(int seatNumber) {
         this.seatNumber = seatNumber;
     }
-
     public int getSeatNumber() {
         return seatNumber;
     }

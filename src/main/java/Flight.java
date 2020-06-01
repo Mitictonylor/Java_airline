@@ -32,8 +32,7 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
      if( !this.checkIfPassengerIsAlreadyInThePassengerList(passenger) && this.checkAvailableSeat() ){
         this.passengers.add(passenger);
-        Flight flightToAddToPassenger = new Flight(this.plane, this.flightNumber, this.destinationAirport, this.departureAirport,this.departureTime);
-        passenger.setFlight(flightToAddToPassenger);
+        passenger.setFlight(this);
         passenger.setSeatNumber(this.generateNotUsedSeat());
         }
     }
@@ -67,7 +66,7 @@ public class Flight {
     }
     public int generateNotUsedSeat() {
         int randomSeat = this.generateRandomSeatNumber();
-        while (this.isSeatNumberAlreadyOccupied(randomSeat) && randomSeat > 0) {
+        while (this.isSeatNumberAlreadyOccupied(randomSeat)) {
             randomSeat = this.generateRandomSeatNumber();}
             return randomSeat;
     }
